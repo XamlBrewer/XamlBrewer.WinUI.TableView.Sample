@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "XamlBrewer.WinUI.TableView.Sample (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "XamlBrewer.WinUI.TableView.Sample (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
