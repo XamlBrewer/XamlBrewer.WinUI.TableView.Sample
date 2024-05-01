@@ -6,10 +6,16 @@
       mc:Ignorable="d"
       Background="Transparent">
 
-    <Grid Margin="40 40 20 80"
-          ColumnSpacing="0"
+    <Grid ColumnSpacing="0"
           RowSpacing="0">
-        <TextBlock FontSize="20">
+        <!-- WinUI Logo -->
+        <Image Source="/Assets/WinuiLogo.png"
+               VerticalAlignment="Bottom"
+               HorizontalAlignment="Left"
+               Height="48" />
+
+        <TextBlock Margin="40 40 20 80"
+                   FontSize="20">
             <Run Text="Demonstrates using the " /><Hyperlink NavigateUri="https://github.com/w-ahmad/WinUI.TableView">WinUI TableView</Hyperlink><Run Text=" control in a WinUI 3 Desktop application:" />
             <LineBreak />
             <Run>* ...:</Run><LineBreak />

@@ -3,16 +3,20 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:tableview="using:WinUI.TableView"
+      xmlns:models="using:XamlBrewer.WinUI.Models"
       mc:Ignorable="d"
       Background="Transparent">
 
     <Grid>
-        <!-- Mapsui Logo -->
-        <Image Source="/Assets/MapsuiLogo.png"
+        <!-- WinUI Logo -->
+        <Image Source="/Assets/WinuiLogo.png"
                VerticalAlignment="Bottom"
                HorizontalAlignment="Left"
                Height="48" />
 
-
+        <!-- Default TableView -->
+        <tableview:TableView ItemsSource="{x:Bind models:StandardModel.Particles}"
+                             SelectionMode="Extended" />
     </Grid>
 </Page>

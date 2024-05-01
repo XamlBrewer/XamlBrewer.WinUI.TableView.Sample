@@ -13,12 +13,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <Content Remove="Assets\WinuiLogo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Remove="Assets\About.png" />
     <None Remove="Assets\Beer.ico" />
     <None Remove="Assets\Home.png" />
+    <None Remove="Assets\WinuiLogo.png" />
     <None Remove="Shell.xaml" />
     <None Remove="Views\AboutPage.xaml" />
     <None Remove="Views\HomePage.xaml" />
