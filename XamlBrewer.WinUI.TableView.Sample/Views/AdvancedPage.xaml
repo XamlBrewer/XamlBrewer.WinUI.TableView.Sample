@@ -1,0 +1,71 @@
+<Page x:Class="XamlBrewer.WinUI.TableView.Sample.Views.AdvancedPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:tv="using:WinUI.TableView"
+      xmlns:models="using:XamlBrewer.WinUI.Models"
+      mc:Ignorable="d"
+      Background="Transparent">
+
+    <Grid>
+        <!-- WinUI Logo -->
+        <Image Source="/Assets/WinuiLogo.png"
+               VerticalAlignment="Bottom"
+               HorizontalAlignment="Left"
+               Height="48" />
+
+        <!-- Customized TableView -->
+        <tv:TableView ItemsSource="{x:Bind models:StandardModel.Particles}"
+                      AutoGenerateColumns="False"
+                      SelectionMode="Extended"
+                      Margin="0 0 0 80">
+            <tv:TableView.Columns>
+                <tv:TableViewTemplateColumn>
+                    <tv:TableViewTemplateColumn.CellTemplate>
+                        <DataTemplate x:DataType="models:Particle">
+                            <Border CornerRadius="8"
+                                    BorderThickness="4"
+                                    BorderBrush="{x:Bind Color}"
+                                    Height="60"
+                                    Width="60">
+                                <Border HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Height="36"
+                                        Width="36"
+                                        CornerRadius="18"
+                                        Background="{x:Bind Color}">
+                                    <TextBlock Text="{x:Bind Symbol}"
+                                               Foreground="Black"
+                                               FontWeight="SemiBold"
+                                               FontSize="20"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               HorizontalTextAlignment="Center" />
+                                </Border>
+                            </Border>
+                        </DataTemplate>
+                    </tv:TableViewTemplateColumn.CellTemplate>
+                    <tv:TableViewTemplateColumn.EditingTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding Symbol, Mode=TwoWay}" />
+                        </DataTemplate>
+                    </tv:TableViewTemplateColumn.EditingTemplate>
+                </tv:TableViewTemplateColumn>
+                <tv:TableViewTextColumn Header="Name"
+                                        Binding="{Binding Name}" />
+                <tv:TableViewComboBoxColumn Header="Type"
+                                            Binding="{Binding Type}"
+                                            ItemsSource="{x:Bind models:StandardModel.Types}" />
+
+                <tv:TableViewComboBoxColumn Header="Class"
+                                            Binding="{Binding Group}"
+                                            ItemsSource="{x:Bind models:StandardModel.Groups}" />
+                <tv:TableViewTextColumn Header="Spin"
+                                        Binding="{Binding Spin}" />
+                <tv:TableViewTextColumn Header="Charge"
+                                        Binding="{Binding Charge}" />
+            </tv:TableView.Columns>
+        </tv:TableView>
+    </Grid>
+</Page>

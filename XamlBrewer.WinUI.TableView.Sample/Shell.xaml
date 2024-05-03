@@ -25,22 +25,22 @@
                                  Margin="8 0">Blog post</HyperlinkButton>
             </NavigationView.PaneCustomContent>-->
             <NavigationView.MenuItems>
-                <NavigationViewItem Content="Hello World"
+                <NavigationViewItem Content="Hello Universe"
                                     Tag="XamlBrewer.WinUI.TableView.Sample.Views.HomePage"
                                     ToolTipService.ToolTip="Hi">
                     <NavigationViewItem.Icon>
-                        <BitmapIcon UriSource="/Assets/Home.png"
+                        <BitmapIcon UriSource="/Assets/Galaxy.png"
                                     ShowAsMonochrome="False" />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <!--<NavigationViewItem Content="Gallery"
-                                    Tag="XamlBrewer.WinUI.TableView.Sample.Views.GalleryPage"
-                                    ToolTipService.ToolTip="Samples">
+                <NavigationViewItem Content="More"
+                                    Tag="XamlBrewer.WinUI.TableView.Sample.Views.AdvancedPage"
+                                    ToolTipService.ToolTip="More">
                     <NavigationViewItem.Icon>
-                        <BitmapIcon UriSource="/Assets/Gallery.png"
+                        <BitmapIcon UriSource="/Assets/BlackHole.png"
                                     ShowAsMonochrome="False" />
                     </NavigationViewItem.Icon>
-                </NavigationViewItem>-->
+                </NavigationViewItem>
             </NavigationView.MenuItems>
             <NavigationView.FooterMenuItems>
                 <NavigationViewItem Content="About"

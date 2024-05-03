@@ -15,10 +15,12 @@
   <ItemGroup>
     <None Remove="Assets\About.png" />
     <None Remove="Assets\Beer.ico" />
-    <None Remove="Assets\Home.png" />
+    <None Remove="Assets\BlackHole.png" />
+    <None Remove="Assets\Galaxy.png" />
     <None Remove="Assets\WinuiLogo.png" />
     <None Remove="Shell.xaml" />
     <None Remove="Views\AboutPage.xaml" />
+    <None Remove="Views\AdvancedPage.xaml" />
     <None Remove="Views\HomePage.xaml" />
   </ItemGroup>
 
@@ -56,6 +58,10 @@
     </Page>
     <Page Update="Views\AboutPage.xaml">
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\AdvancedPage.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\HomePage.xaml">
       <Generator>MSBuild:Compile</Generator>

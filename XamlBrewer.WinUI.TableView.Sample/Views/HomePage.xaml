@@ -17,6 +17,7 @@
 
         <!-- Default TableView -->
         <tableview:TableView ItemsSource="{x:Bind models:StandardModel.Particles}"
-                             SelectionMode="Extended" />
+                             SelectionMode="Extended" 
+                             Margin="0 0 0 80"/>
     </Grid>
 </Page>

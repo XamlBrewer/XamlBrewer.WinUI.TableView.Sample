@@ -1,19 +1,33 @@
-﻿namespace XamlBrewer.WinUI.Models
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using Microsoft.UI.Xaml.Media;
+using System.ComponentModel.DataAnnotations;
+
+namespace XamlBrewer.WinUI.Models
 {
-    public class Particle
+    public partial class Particle : ObservableObject
     {
-        public string Class { get; set; }
+        [ObservableProperty]
+        private string group;
 
-        public string Type { get; set; }
+        [ObservableProperty]
+        private string type;
 
-        public string Name { get; set; }
+        [ObservableProperty]
+        public string name;
 
-        public string Symbol { get; set; }
+        [ObservableProperty]
+        public string symbol;
 
-        public string Spin { get; set; }
+        [ObservableProperty]
+        public string spin;
 
-        public double Mass { get; set; }
+        [ObservableProperty]
+        public double mass;
 
-        public double Charge { get; set; }
+        [ObservableProperty]
+        public string charge;
+
+        [Display(AutoGenerateField = false)]
+        public Brush Color => new SolidColorBrush(StandardModel.GetColor(Type));
     }
 }
