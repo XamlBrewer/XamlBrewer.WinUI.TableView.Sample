@@ -52,5 +52,17 @@ namespace XamlBrewer.WinUI.Models
                 _ => Colors.Transparent
             };
         }
+
+        public static string Glyph(double mass)
+        {
+            return mass switch
+            {
+                < 1 => "\uE86C",
+                < 5 => "\uE86D",
+                < 100 => "\uE86E",
+                < 2_000 => "\uE86F",
+                _ => "\uE870"
+            };
+        }
     }
 }

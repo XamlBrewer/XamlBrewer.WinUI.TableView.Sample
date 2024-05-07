@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using Microsoft.UI.Xaml.Media;
 using System.ComponentModel.DataAnnotations;
+using Windows.UI;
 
 namespace XamlBrewer.WinUI.Models
 {
@@ -28,6 +28,12 @@ namespace XamlBrewer.WinUI.Models
         public string charge;
 
         [Display(AutoGenerateField = false)]
-        public Brush Color => new SolidColorBrush(StandardModel.GetColor(Type));
+        public Color Color => StandardModel.GetColor(Type);
+
+        [Display(AutoGenerateField = false)]
+        public string MassGlyph => StandardModel.Glyph(Mass);
+
+        [Display(AutoGenerateField = false)]
+        public string MassText => $"{Mass} MeV/c²";
     }
 }

@@ -33,7 +33,7 @@
                                     ShowAsMonochrome="False" />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem Content="More"
+                <NavigationViewItem Content="Goodbye Universe"
                                     Tag="XamlBrewer.WinUI.TableView.Sample.Views.AdvancedPage"
                                     ToolTipService.ToolTip="More">
                     <NavigationViewItem.Icon>

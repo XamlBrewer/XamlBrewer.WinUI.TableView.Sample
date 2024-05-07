@@ -21,24 +21,44 @@
                       SelectionMode="Extended"
                       Margin="0 0 0 80">
             <tv:TableView.Columns>
-                <tv:TableViewTemplateColumn>
+                <tv:TableViewTemplateColumn MaxWidth="64">
                     <tv:TableViewTemplateColumn.CellTemplate>
                         <DataTemplate x:DataType="models:Particle">
                             <Border CornerRadius="8"
                                     BorderThickness="4"
-                                    BorderBrush="{x:Bind Color}"
-                                    Height="60"
-                                    Width="60">
+                                    Height="48"
+                                    Width="48">
+                                <Border.BorderBrush>
+                                    <LinearGradientBrush StartPoint="0 0"
+                                                         EndPoint="1 1">
+                                        <GradientStopCollection>
+                                            <GradientStop Color="{x:Bind Color}"
+                                                          Offset="0" />
+                                            <GradientStop Color="silver"
+                                                          Offset="1" />
+                                        </GradientStopCollection>
+                                    </LinearGradientBrush>
+                                </Border.BorderBrush>
                                 <Border HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
-                                        Height="36"
-                                        Width="36"
-                                        CornerRadius="18"
-                                        Background="{x:Bind Color}">
+                                        Height="32"
+                                        Width="32"
+                                        CornerRadius="16">
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0 0"
+                                                             EndPoint="1 1">
+                                            <GradientStopCollection>
+                                                <GradientStop Color="{x:Bind Color}"
+                                                              Offset="0" />
+                                                <GradientStop Color="silver"
+                                                              Offset="1" />
+                                            </GradientStopCollection>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
                                     <TextBlock Text="{x:Bind Symbol}"
                                                Foreground="Black"
                                                FontWeight="SemiBold"
-                                               FontSize="20"
+                                               FontSize="18"
                                                HorizontalAlignment="Center"
                                                VerticalAlignment="Center"
                                                HorizontalTextAlignment="Center" />
@@ -62,9 +82,21 @@
                                             Binding="{Binding Group}"
                                             ItemsSource="{x:Bind models:StandardModel.Groups}" />
                 <tv:TableViewTextColumn Header="Spin"
-                                        Binding="{Binding Spin}" />
+                                        Binding="{Binding Spin}"
+                                        MaxWidth="60" />
                 <tv:TableViewTextColumn Header="Charge"
-                                        Binding="{Binding Charge}" />
+                                        Binding="{Binding Charge}"
+                                        MaxWidth="72" />
+                <tv:TableViewTemplateColumn Header="Mass" MaxWidth="60">
+                    <tv:TableViewTemplateColumn.CellTemplate>
+                        <DataTemplate x:DataType="models:Particle">
+                            <FontIcon FontFamily="Segoe MDL2 Assets"
+                                      Glyph="{x:Bind MassGlyph}"
+                                      ToolTipService.ToolTip="{x:Bind MassText}" 
+                                      VerticalAlignment="Top"/>
+                        </DataTemplate>
+                    </tv:TableViewTemplateColumn.CellTemplate>
+                </tv:TableViewTemplateColumn>
             </tv:TableView.Columns>
         </tv:TableView>
     </Grid>
