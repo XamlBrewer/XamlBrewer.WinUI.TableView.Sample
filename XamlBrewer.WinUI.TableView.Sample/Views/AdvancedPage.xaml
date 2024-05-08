@@ -96,6 +96,11 @@
                                       VerticalAlignment="Top"/>
                         </DataTemplate>
                     </tv:TableViewTemplateColumn.CellTemplate>
+                    <tv:TableViewTemplateColumn.EditingTemplate>
+                        <DataTemplate>
+                            <NumberBox Value="{Binding Mass, Mode=TwoWay}" />
+                        </DataTemplate>
+                    </tv:TableViewTemplateColumn.EditingTemplate>
                 </tv:TableViewTemplateColumn>
             </tv:TableView.Columns>
         </tv:TableView>
