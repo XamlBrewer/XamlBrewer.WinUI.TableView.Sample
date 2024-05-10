@@ -17,9 +17,13 @@
         <TextBlock Margin="40 40 20 80"
                    FontSize="20">
             <Run Text="Demonstrates using the " /><Hyperlink NavigateUri="https://github.com/w-ahmad/WinUI.TableView">WinUI TableView</Hyperlink><Run Text=" control in a WinUI 3 Desktop application:" />
-            <LineBreak />
-            <Run>* ...:</Run><LineBreak />
-            <Run Text="  * ..." /><LineBreak />
+            <LineBreak /><LineBreak />
+            <Run>* Default behavior:</Run><LineBreak />
+            <Run Text="  * Auto-generating columns" /><LineBreak />
+            <Run Text="  * Edit, sort, filter, and copy" /><LineBreak />
+            <Run Text="  * Theming" /><LineBreak /><LineBreak />
+            <Run>* Customization:</Run><LineBreak />            
+            <Run Text="  * Template columns" /><LineBreak />
         </TextBlock>
     </Grid>
 </Page>
