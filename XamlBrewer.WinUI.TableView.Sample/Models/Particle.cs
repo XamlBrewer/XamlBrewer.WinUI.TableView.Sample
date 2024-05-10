@@ -10,6 +10,7 @@ namespace XamlBrewer.WinUI.Models
         private string group;
 
         [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(Color))]
         private string type;
 
         [ObservableProperty]
@@ -22,6 +23,7 @@ namespace XamlBrewer.WinUI.Models
         public string spin;
 
         [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(MassGlyph), nameof(MassText))]
         public double mass;
 
         [ObservableProperty]
