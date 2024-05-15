@@ -77,7 +77,6 @@
                 <tv:TableViewComboBoxColumn Header="Type"
                                             Binding="{Binding Type}"
                                             ItemsSource="{x:Bind models:StandardModel.Types}" />
-
                 <tv:TableViewComboBoxColumn Header="Class"
                                             Binding="{Binding Group}"
                                             ItemsSource="{x:Bind models:StandardModel.Groups}" />
@@ -87,13 +86,14 @@
                 <tv:TableViewTextColumn Header="Charge"
                                         Binding="{Binding Charge}"
                                         MaxWidth="72" />
-                <tv:TableViewTemplateColumn Header="Mass" MaxWidth="60">
+                <tv:TableViewTemplateColumn Header="Mass"
+                                            MaxWidth="60">
                     <tv:TableViewTemplateColumn.CellTemplate>
                         <DataTemplate x:DataType="models:Particle">
                             <FontIcon FontFamily="Segoe MDL2 Assets"
                                       Glyph="{x:Bind MassGlyph}"
-                                      ToolTipService.ToolTip="{x:Bind MassText}" 
-                                      VerticalAlignment="Top"/>
+                                      ToolTipService.ToolTip="{x:Bind MassText}"
+                                      VerticalAlignment="Top" />
                         </DataTemplate>
                     </tv:TableViewTemplateColumn.CellTemplate>
                     <tv:TableViewTemplateColumn.EditingTemplate>
