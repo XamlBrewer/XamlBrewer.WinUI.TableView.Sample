@@ -14,20 +14,20 @@ namespace XamlBrewer.WinUI.Models
         private string type;
 
         [ObservableProperty]
-        public string name;
+        private string name;
 
         [ObservableProperty]
-        public string symbol;
+        private string symbol;
 
         [ObservableProperty]
-        public string spin;
+        private string spin;
 
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(MassGlyph), nameof(MassText))]
-        public double mass;
+        private double mass;
 
         [ObservableProperty]
-        public string charge;
+        private string charge;
 
         [Display(AutoGenerateField = false)]
         public Color Color => StandardModel.GetColor(Type);
