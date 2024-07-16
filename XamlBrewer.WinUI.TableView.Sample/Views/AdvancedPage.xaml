@@ -15,11 +15,40 @@
                HorizontalAlignment="Left"
                Height="48" />
 
+        <Border CornerRadius="4"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left">
+            <Border.Background>
+                <SolidColorBrush Color="MistyRose"
+                                 Opacity=".8" />
+            </Border.Background>
+            <CommandBar DefaultLabelPosition="Right"
+                        OverflowButtonVisibility="Collapsed">
+                <AppBarButton ToolTipService.ToolTip="Add"
+                              Icon="Add"
+                              Click="AddButton_Click"
+                              Foreground="MidnightBlue" />
+                <AppBarButton x:Name="DeleteButton"
+                              ToolTipService.ToolTip="Delete"
+                              Icon="Delete"
+                              IsEnabled="False"
+                              Click="DeleteButton_Click"
+                              Foreground="MidnightBlue" />
+                <AppBarButton x:Name="UpdateButton"
+                              ToolTipService.ToolTip="Update"
+                              Icon="Edit"
+                              Click="UpdateButton_Click"
+                              Foreground="MidnightBlue" />
+            </CommandBar>
+        </Border>
+
         <!-- Customized TableView -->
-        <tv:TableView ItemsSource="{x:Bind models:StandardModel.Particles}"
+        <tv:TableView x:Name="TheTableView"
+                      ItemsSource="{x:Bind models:StandardModel.Particles}"
                       AutoGenerateColumns="False"
+                      SelectionChanged="TableView_SelectionChanged"
                       SelectionMode="Extended"
-                      Margin="0 0 0 80">
+                      Margin="0 60 0 80">
             <tv:TableView.Columns>
                 <tv:TableViewTemplateColumn MaxWidth="64">
                     <tv:TableViewTemplateColumn.CellTemplate>

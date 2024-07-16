@@ -1,0 +1,85 @@
+<Page x:Class="XamlBrewer.WinUI.TableView.Sample.Views.PagingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:tableview="using:WinUI.TableView"
+      xmlns:models="using:XamlBrewer.WinUI.Models"
+      xmlns:viewmodels="using:XamlBrewer.WinUI.TableView.Sample.ViewModels"
+      mc:Ignorable="d"
+      Background="Transparent">
+
+    <Page.DataContext>
+        <viewmodels:PagingPageViewModel x:Name="ViewModel" />
+    </Page.DataContext>
+
+    <Grid>
+        <!-- WinUI Logo -->
+        <Image Source="/Assets/WinuiLogo.png"
+               VerticalAlignment="Bottom"
+               HorizontalAlignment="Left"
+               Height="48" />
+
+        <!-- Toolbar -->
+        <Border 
+                CornerRadius="4"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left">
+            <Border.Background>
+                <SolidColorBrush Color="MistyRose"
+                                 Opacity=".7" />
+            </Border.Background>
+            <CommandBar DefaultLabelPosition="Right"
+                        OverflowButtonVisibility="Collapsed">
+                <AppBarButton ToolTipService.ToolTip="First"
+                              Icon="Previous"
+                              Command="{x:Bind ViewModel.FirstAsyncCommand, Mode=OneWay}"
+                              Foreground="MidnightBlue" />
+                <AppBarButton ToolTipService.ToolTip="Previous"
+                              Icon="Back"
+                              Command="{x:Bind ViewModel.PreviousAsyncCommand, Mode=OneWay}"
+                              Foreground="MidnightBlue" />
+                <AppBarElementContainer VerticalContentAlignment="Center">
+                    <TextBlock Text="Page"
+                               Margin="12 0 8 0" />
+                </AppBarElementContainer>
+                <AppBarElementContainer VerticalContentAlignment="Center">
+                    <TextBlock Text="{x:Bind ViewModel.PageNumber, Mode=OneWay}" />
+                </AppBarElementContainer>
+                <AppBarElementContainer VerticalContentAlignment="Center">
+                    <TextBlock Text="of"
+                               Margin="8 0" />
+                </AppBarElementContainer>
+                <AppBarElementContainer VerticalContentAlignment="Center">
+                    <TextBlock Text="{x:Bind ViewModel.PageCount, Mode=OneWay}"
+                               Margin="0 0 12 0" />
+                </AppBarElementContainer>
+                <AppBarButton ToolTipService.ToolTip="Next"
+                              Icon="Forward"
+                              Command="{x:Bind ViewModel.NextAsyncCommand, Mode=OneWay}"
+                              Foreground="MidnightBlue" />
+                <AppBarButton ToolTipService.ToolTip="Last"
+                              Icon="Next"
+                              Command="{x:Bind ViewModel.LastAsyncCommand, Mode=OneWay}"
+                              Foreground="MidnightBlue" />
+                <AppBarSeparator />
+                <AppBarElementContainer VerticalContentAlignment="Center">
+                    <ComboBox ItemsSource="{x:Bind ViewModel.PageSizes}"
+                              SelectedItem="{x:Bind ViewModel.PageSize, Mode=TwoWay}" />
+                </AppBarElementContainer>
+                <AppBarElementContainer VerticalContentAlignment="Center">
+                    <TextBlock Text="rows per page"
+                               Margin="8 0" />
+                </AppBarElementContainer>
+            </CommandBar>
+        </Border>
+
+        <!-- TableView -->
+        <tableview:TableView x:Name="TheTableView"
+                             ItemsSource="{x:Bind ViewModel.Particles, Mode=OneWay}"
+                             SelectionMode="Extended"
+                             CanSortColumns="False"
+                             CanFilterColumns="False"
+                             Margin="0 60 0 80" />
+    </Grid>
+</Page>

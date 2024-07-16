@@ -17,11 +17,14 @@
     <None Remove="Assets\Beer.ico" />
     <None Remove="Assets\BlackHole.png" />
     <None Remove="Assets\Galaxy.png" />
+    <None Remove="Assets\Multiverse.png" />
     <None Remove="Assets\WinuiLogo.png" />
+    <None Remove="Assets\Wormhole.png" />
     <None Remove="Shell.xaml" />
     <None Remove="Views\AboutPage.xaml" />
     <None Remove="Views\AdvancedPage.xaml" />
     <None Remove="Views\HomePage.xaml" />
+    <None Remove="Views\PagingPage.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,7 +41,7 @@
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240428000" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240627000" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1" />
     <PackageReference Include="WinUI.TableView" Version="1.1.1" />
     <Manifest Include="$(ApplicationManifest)" />
@@ -60,6 +63,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Update="Views\AdvancedPage.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PagingPage.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>

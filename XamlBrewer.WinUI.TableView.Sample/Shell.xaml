@@ -41,6 +41,14 @@
                                     ShowAsMonochrome="False" />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
+                <NavigationViewItem Content="Multiverse"
+                                    Tag="XamlBrewer.WinUI.TableView.Sample.Views.PagingPage"
+                                    ToolTipService.ToolTip="More">
+                    <NavigationViewItem.Icon>
+                        <BitmapIcon UriSource="/Assets/Multiverse.png"
+                                    ShowAsMonochrome="False" />
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>                
             </NavigationView.MenuItems>
             <NavigationView.FooterMenuItems>
                 <NavigationViewItem Content="About"
