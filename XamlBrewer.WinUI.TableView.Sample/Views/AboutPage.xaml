@@ -24,6 +24,10 @@
             <Run Text="  * Theming" /><LineBreak /><LineBreak />
             <Run>* Customization:</Run><LineBreak />            
             <Run Text="  * Template columns" /><LineBreak />
+            <Run Text="  * Data template selectors" /><LineBreak /><LineBreak />
+            <Run>* Advanced:</Run><LineBreak />            
+            <Run Text="  * Programmatical changes" /><LineBreak />
+            <Run Text="  * Paging" /><LineBreak />
         </TextBlock>
     </Grid>
 </Page>

@@ -29,6 +29,13 @@ namespace XamlBrewer.WinUI.Models
         [ObservableProperty]
         private string charge;
 
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(Regular))]
+        private bool hypothetical;
+
+        [Display(AutoGenerateField = false)]
+        public bool Regular => !Hypothetical;
+
         [Display(AutoGenerateField = false)]
         public Color Color => StandardModel.GetColor(Type);
 

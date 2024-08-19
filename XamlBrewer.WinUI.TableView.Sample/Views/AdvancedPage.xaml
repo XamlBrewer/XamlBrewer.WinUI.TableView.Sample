@@ -5,8 +5,54 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:tv="using:WinUI.TableView"
       xmlns:models="using:XamlBrewer.WinUI.Models"
+      xmlns:services="using:XamlBrewer.WinUI.TableView.Sample.Services"
       mc:Ignorable="d"
       Background="Transparent">
+
+    <Page.Resources>
+        <DataTemplate x:Key="Regular"
+                      x:DataType="models:Particle">
+            <TextBlock Text="{Binding Name}"
+                       FontWeight="SemiBold"
+                       DataContext="{Binding}" />
+        </DataTemplate>
+        <DataTemplate x:Key="Hypothetical"
+                      x:DataType="models:Particle">
+            <TextBlock Text="{Binding Name}"
+                       DataContext="{Binding}"
+                       FontStyle="Italic" />
+        </DataTemplate>
+        <DataTemplate x:Key="Smart"
+                      x:DataType="models:Particle">
+            <Grid>
+                <TextBlock Visibility="{Binding Regular}"
+                           Text="{Binding Name}"
+                           FontWeight="SemiBold"
+                           DataContext="{Binding}" />
+                <TextBlock Visibility="{Binding Hypothetical}"
+                           Text="{Binding Name}"
+                           DataContext="{Binding}"
+                           FontStyle="Italic" />
+            </Grid>
+
+        </DataTemplate>
+        <services:ParticleDataTemplateSelector x:Key="TheParticleDataTemplateSelector">
+            <services:ParticleDataTemplateSelector.Regular>
+                <DataTemplate x:DataType="models:Particle">
+                    <TextBlock Text="{Binding Name}"
+                               FontWeight="SemiBold"
+                               DataContext="{Binding}" />
+                </DataTemplate>
+            </services:ParticleDataTemplateSelector.Regular>
+            <services:ParticleDataTemplateSelector.Hypothetical>
+                <DataTemplate x:DataType="models:Particle">
+                    <TextBlock Text="{Binding Name}"
+                               DataContext="{Binding}"
+                               FontStyle="Italic" />
+                </DataTemplate>
+            </services:ParticleDataTemplateSelector.Hypothetical>
+        </services:ParticleDataTemplateSelector>
+    </Page.Resources>
 
     <Grid>
         <!-- WinUI Logo -->
@@ -43,7 +89,7 @@
         </Border>
 
         <!-- Customized TableView -->
-        <tv:TableView x:Name="TheTableView"
+        <tv:TableView x:Name="ParticlesTable"
                       ItemsSource="{x:Bind models:StandardModel.Particles}"
                       AutoGenerateColumns="False"
                       SelectionChanged="TableView_SelectionChanged"
@@ -101,8 +147,26 @@
                         </DataTemplate>
                     </tv:TableViewTemplateColumn.EditingTemplate>
                 </tv:TableViewTemplateColumn>
+                <tv:TableViewTemplateColumn CellTemplate="{StaticResource Smart}"
+                                            Header="Name" />
+                <!-- Variations -->
+                <!--
                 <tv:TableViewTextColumn Header="Name"
                                         Binding="{Binding Name}" />
+                <tv:TableViewTemplateColumn CellTemplate="{StaticResource Regular}"
+                                            Header="Regular">
+                </tv:TableViewTemplateColumn>
+                <tv:TableViewTemplateColumn CellTemplate="{StaticResource Hypothetical}"
+                                            Header="Hypothetical">
+                </tv:TableViewTemplateColumn>
+                <tv:TableViewTemplateColumn Header="Selector">
+                    <tv:TableViewTemplateColumn.CellTemplate>
+                        <DataTemplate x:DataType="models:Particle">
+                            <ContentControl ContentTemplateSelector="{StaticResource TheParticleDataTemplateSelector}" />
+                        </DataTemplate>
+                    </tv:TableViewTemplateColumn.CellTemplate>
+                </tv:TableViewTemplateColumn>
+                -->
                 <tv:TableViewComboBoxColumn Header="Type"
                                             Binding="{Binding Type}"
                                             ItemsSource="{x:Bind models:StandardModel.Types}" />

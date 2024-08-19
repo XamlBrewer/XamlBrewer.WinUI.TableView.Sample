@@ -75,8 +75,7 @@
         </Border>
 
         <!-- TableView -->
-        <tableview:TableView x:Name="TheTableView"
-                             ItemsSource="{x:Bind ViewModel.Particles, Mode=OneWay}"
+        <tableview:TableView ItemsSource="{x:Bind ViewModel.Particles, Mode=OneWay}"
                              SelectionMode="Extended"
                              CanSortColumns="False"
                              CanFilterColumns="False"
