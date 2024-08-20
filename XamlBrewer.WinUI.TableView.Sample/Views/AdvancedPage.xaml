@@ -178,7 +178,7 @@
                                         MaxWidth="60" />
                 <tv:TableViewTextColumn Header="Charge"
                                         Binding="{Binding Charge}"
-                                        MaxWidth="72" />
+                                        MaxWidth="80" />
                 <tv:TableViewTemplateColumn Header="Mass"
                                             MaxWidth="60">
                     <tv:TableViewTemplateColumn.CellTemplate>
