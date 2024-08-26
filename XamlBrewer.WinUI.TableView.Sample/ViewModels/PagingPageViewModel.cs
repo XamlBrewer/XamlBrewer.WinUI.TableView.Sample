@@ -29,19 +29,19 @@ namespace XamlBrewer.WinUI.TableView.Sample.ViewModels
             FirstAsyncCommand = new AsyncRelayCommand(
                 async () => await GetParticles(1, pageSize),
                 () => pageNumber != 1
-              );
+                );
             PreviousAsyncCommand = new AsyncRelayCommand(
                 async () => await GetParticles(pageNumber - 1, pageSize),
                 () => pageNumber > 1
-              );
+                );
             NextAsyncCommand = new AsyncRelayCommand(
                 async () => await GetParticles(pageNumber + 1, pageSize),
                 () => pageNumber < pageCount
-              );
+                );
             LastAsyncCommand = new AsyncRelayCommand(
                 async () => await GetParticles(pageCount, pageSize),
                 () => pageNumber != pageCount
-              );
+                );
 
             Refresh();
         }

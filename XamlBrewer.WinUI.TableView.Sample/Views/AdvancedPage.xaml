@@ -149,6 +149,7 @@
                 </tv:TableViewTemplateColumn>
                 <tv:TableViewTemplateColumn CellTemplate="{StaticResource Smart}"
                                             Header="Name" />
+
                 <!-- Variations -->
                 <!--
                 <tv:TableViewTextColumn Header="Name"
@@ -159,6 +160,8 @@
                 <tv:TableViewTemplateColumn CellTemplate="{StaticResource Hypothetical}"
                                             Header="Hypothetical">
                 </tv:TableViewTemplateColumn>
+                <tv:TableViewTemplateColumn CellTemplateSelector="{StaticResource TheParticleDataTemplateSelector}"
+                                            Header="ThisShouldHaveWorked" />                
                 <tv:TableViewTemplateColumn Header="Selector">
                     <tv:TableViewTemplateColumn.CellTemplate>
                         <DataTemplate x:DataType="models:Particle">
@@ -167,6 +170,7 @@
                     </tv:TableViewTemplateColumn.CellTemplate>
                 </tv:TableViewTemplateColumn>
                 -->
+                
                 <tv:TableViewComboBoxColumn Header="Type"
                                             Binding="{Binding Type}"
                                             ItemsSource="{x:Bind models:StandardModel.Types}" />

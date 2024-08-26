@@ -20,8 +20,18 @@ namespace XamlBrewer.WinUI.TableView.Sample.Views
         {
             StandardModel.Particles.Insert(
                     0,
-                    new Particle { Group = "boson", Charge = "0", Mass = 0, Name = "graviton", Spin = "2 ħ", Symbol = "G", Type = "tensor boson", Hypothetical = true }
-                );
+                    new Particle
+                    {
+                        Group = "boson",
+                        Charge = "0",
+                        Mass = 0,
+                        Name = "graviton",
+                        Spin = "2 ħ",
+                        Symbol = "G",
+                        Type = "tensor boson",
+                        Hypothetical = true
+                    }
+            );
         }
 
         private void DeleteButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)

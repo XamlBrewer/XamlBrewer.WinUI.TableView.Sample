@@ -21,8 +21,7 @@
                Height="48" />
 
         <!-- Toolbar -->
-        <Border 
-                CornerRadius="4"
+        <Border CornerRadius="4"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Left">
             <Border.Background>
